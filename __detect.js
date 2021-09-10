@@ -4,8 +4,8 @@ import { globalStylesheetScssRelativePath, globalStylesheetScssRelativeVitePath 
 export const heuristics = [
 	{
 		description: "`sass` is installed",
-		async detector({ environment }) {
-			return "sass" in environment.dependencies || "sass" in environment.devDependencies;
+		async detector({ folderInfo }) {
+			return "sass" in folderInfo.dependencies || "sass" in folderInfo.devDependencies;
 		},
 	},
 	{
@@ -41,8 +41,8 @@ export const heuristics = [
 	},
 	{
 		description: "The main file (`src/routes/__layout.svelte` for SvelteKit, `src/main.js` or `src/main.ts` for Vite) imports `src/app.scss`",
-		async detector({ environment, readFile }) {
-			if (environment.kit) {
+		async detector({ folderInfo, readFile }) {
+			if (folderInfo.kit) {
 				const { text } = await readFile({ path: "/src/routes/__layout.svelte" });
 
 				return text.includes(globalStylesheetScssRelativePath);
