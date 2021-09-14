@@ -20,7 +20,7 @@ export const heuristics = [
 
 				return true;
 			};
-			
+
 			const js = await readFile({ path: "/svelte.config.js" });
 			const cjs = await readFile({ path: "/svelte.config.cjs" });
 
