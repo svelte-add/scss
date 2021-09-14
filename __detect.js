@@ -24,9 +24,6 @@ export const heuristics = [
 			const js = await readFile({ path: "/svelte.config.js" });
 			const cjs = await readFile({ path: "/svelte.config.cjs" });
 
-			const js = await readFile({ path: "/svelte.config.js" });
-			const cjs = await readFile({ path: "/svelte.config.cjs" });
-
 			if (js.exists) {
 				return preprocessIsProbablySetup(js.text);
 			} else if (cjs.exists) {
