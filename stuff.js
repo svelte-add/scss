@@ -1,9 +1,3 @@
-export const globalStylesheetCssPath = "/src/app.css";
-export const globalStylesheetCssRelativePath = "../app.css";
-export const globalStylesheetCssRelativeVitePath = "./app.css";
-
-export const globalStylesheetScssPath = "/src/app.scss";
-export const globalStylesheetScssRelativePath = "../app.scss";
-export const globalStylesheetScssRelativeVitePath = "./app.scss";
-
-export const stylesHint = "Write your global styles here, in SCSS syntax";
+export const extension = "scss";
+export const stylesHint = "Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing";
+export const variablesHint = "Variables and mixins declared here will be available in all other SCSS files";
