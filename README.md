@@ -24,6 +24,10 @@ After the adder runs,
 
 - You can write SCSS syntax in the `style lang="scss"` blocks in Svelte files.
 
+- You can write SCSS syntax in the `src/variables.scss` file.
+
+  Variables and mixins written here are automatically available to all other SCSS files and `style lang="scss"` blocks in Svelte files without needing to import this file.
+
 - You can write SCSS syntax in the `src/app.scss` file.
 
   This is your global stylesheet because it will be active on every page of your site.
