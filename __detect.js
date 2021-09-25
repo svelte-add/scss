@@ -14,7 +14,6 @@ export const heuristics = [
 			/** @param {string} text */
 			const preprocessIsProbablySetup = (text) => {
 				if (!text.includes("svelte-preprocess")) return false;
-				if (!text.includes("preprocess:")) return false;
 				if (!text.includes("scss")) return false;
 				if (!text.includes("prependData")) return false;
 
