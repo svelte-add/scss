@@ -5,7 +5,7 @@ import { extension, stylesHint, variablesHint } from "./stuff.js";
 
 /** @type {import("../../index.js").AdderRun<import("./__metadata.js").Options>} */
 export const run = async ({ folderInfo, install, updateCss, updateJavaScript, updateSvelte }) => {
-	const importVariables = '@import "src/variables.scss";';
+	const importVariables = '@use "src/variables.scss" as *;';
 
 	await setupStyleLanguage({
 		extension,
