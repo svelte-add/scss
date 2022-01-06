@@ -54,7 +54,7 @@ export const heuristics = [
 			/** @param {string} text */
 			const preprocessIsProbablySetup = (text) => {
 				if (!text.includes("additionalData")) return false;
-				if (!text.includes("@import")) return false;
+				if (!text.includes("@use")) return false;
 				if (!text.includes("src/variables.scss")) return false;
 
 				return true;
