@@ -3,7 +3,7 @@ import { setupStyleLanguage, updateViteConfig } from "../../adder-tools.js";
 import { setDefault, setPropertyValue } from "../../ast-tools.js";
 import { extension, stylesHint, variablesHint } from "./stuff.js";
 
-/** @type {import("../../index.js").AdderRun<import("./__metadata.js").Options>} */
+/** @type {import("../..").AdderRun<import("./__info.js").Options>} */
 export const run = async ({ folderInfo, install, updateCss, updateJavaScript, updateSvelte }) => {
 	const importVariables = '@use "src/variables.scss" as *;';
 
