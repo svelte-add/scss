@@ -2,6 +2,11 @@ import { extension } from "./stuff.js";
 
 export const name = "SCSS";
 
+/** @type {import("../..").Gatekeep} */
+export const gatekeep = async () => {
+	return { able: true };
+};
+
 /** @typedef {{}} Options */
 
 /** @type {import("../..").AdderOptions<Options>} */
