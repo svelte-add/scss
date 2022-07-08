@@ -43,7 +43,6 @@ export const run = async ({ folderInfo, install, updateCss, updateJavaScript, up
 	});
 
 	await updateViteConfig({
-		folderInfo,
 		mutateViteConfig(viteConfig) {
 			const cssConfigObject = setDefault({
 				object: viteConfig,
