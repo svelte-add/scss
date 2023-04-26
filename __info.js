@@ -1,3 +1,4 @@
+import { getViteConfigFilePath } from "../../adder-tools.js";
 import { extension } from "./stuff.js";
 
 export const name = "SCSS";
@@ -66,7 +67,8 @@ export const heuristics = [
 	},
 	{
 		description: "Vite is set up to automatically import variables.scss",
-		async detector({ readFile }) {
+		async detector({ folderInfo, readFile }) {
+
 			/** @param {string} text */
 			const preprocessIsProbablySetup = (text) => {
 				if (!text.includes("additionalData")) return false;
@@ -78,7 +80,7 @@ export const heuristics = [
 
 			const js = await readFile({ path: "/svelte.config.js" });
 			const cjs = await readFile({ path: "/svelte.config.cjs" });
-			const vite = await readFile({ path: "/vite.config.js" });
+			const vite = await readFile({ path: `/${getViteConfigFilePath(folderInfo)}` });
 
 			if (preprocessIsProbablySetup(js.text)) return true;
 			if (preprocessIsProbablySetup(cjs.text)) return true;

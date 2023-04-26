@@ -87,6 +87,7 @@ export const run = async ({ folderInfo, install, updateCss, updateJavaScript, up
 			});
 		},
 		updateJavaScript,
+		folderInfo,
 	});
 
 	await updateCss({
