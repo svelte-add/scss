@@ -68,7 +68,6 @@ export const heuristics = [
 	{
 		description: "Vite is set up to automatically import variables.scss",
 		async detector({ folderInfo, readFile }) {
-
 			/** @param {string} text */
 			const preprocessIsProbablySetup = (text) => {
 				if (!text.includes("additionalData")) return false;
