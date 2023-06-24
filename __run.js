@@ -10,32 +10,7 @@ export const run = async ({ folderInfo, install, updateCss, updateJavaScript, up
 	await setupStyleLanguage({
 		extension,
 		folderInfo,
-		mutateSveltePreprocessArgs(sveltePreprocessArgs) {
-			setPropertyValue({
-				object: sveltePreprocessArgs,
-				property: "scss",
-				value: {
-					type: "ObjectExpression",
-					properties: [
-						{
-							type: "Property",
-							computed: false,
-							key: {
-								type: "Literal",
-								value: "prependData",
-							},
-							kind: "init",
-							method: false,
-							shorthand: false,
-							value: {
-								type: "Literal",
-								value: importVariables,
-							},
-						},
-					],
-				},
-			});
-		},
+		mutateSveltePreprocessArgs() {},
 		stylesHint,
 		updateCss,
 		updateJavaScript,
@@ -106,5 +81,5 @@ export const run = async ({ folderInfo, install, updateCss, updateJavaScript, up
 	});
 
 	await install({ package: "sass" });
-	await install({ package: "svelte-preprocess" });
+	await install({ package: "@sveltejs/vite-plugin-svelte" });
 };

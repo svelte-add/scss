@@ -26,13 +26,11 @@ export const heuristics = [
 		},
 	},
 	{
-		description: "`svelte-preprocess` is set up for SCSS in `svelte.config.js`",
+		description: "`vitePreprocess` is set up for SCSS in `svelte.config.js`",
 		async detector({ readFile }) {
 			/** @param {string} text */
 			const preprocessIsProbablySetup = (text) => {
-				if (!text.includes("svelte-preprocess")) return false;
-				if (!text.includes("scss")) return false;
-				if (!text.includes("prependData")) return false;
+				if (!text.includes("vitePreprocess")) return false;
 
 				return true;
 			};
@@ -77,12 +75,8 @@ export const heuristics = [
 				return true;
 			};
 
-			const js = await readFile({ path: "/svelte.config.js" });
-			const cjs = await readFile({ path: "/svelte.config.cjs" });
 			const vite = await readFile({ path: `/${getViteConfigFilePath(folderInfo)}` });
 
-			if (preprocessIsProbablySetup(js.text)) return true;
-			if (preprocessIsProbablySetup(cjs.text)) return true;
 			if (preprocessIsProbablySetup(vite.text)) return true;
 
 			return false;
