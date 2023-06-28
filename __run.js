@@ -81,5 +81,6 @@ export const run = async ({ folderInfo, install, updateCss, updateJavaScript, up
 	});
 
 	await install({ package: "sass" });
-	await install({ package: "@sveltejs/vite-plugin-svelte" });
+
+	if (!folderInfo.kit) await install({ package: "@sveltejs/vite-plugin-svelte" });
 };
