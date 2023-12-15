@@ -71,7 +71,7 @@ export const run = async ({ folderInfo, install, updateCss, updateJavaScript, up
 			postcss.prepend(
 				new Comment({
 					text: variablesHint,
-				})
+				}),
 			);
 
 			return {
